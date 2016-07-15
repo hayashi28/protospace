@@ -35,7 +35,3 @@ Protospace
 - user
    - has_many :prototypes
    - has_many :comments
-
-
-
-
