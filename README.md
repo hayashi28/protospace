@@ -4,29 +4,40 @@
 ## Database
 
 - prototype
-   - catchcopy :text
-   - concept :text
-   - image :text
+   - catchcopy   :text
+   - concept     :text
+   - image       :text
+   - user_id     :integer
 
 - comment
-   - content :text
-   - user_id :integer
+   - content      :text
+   - user_id      :integer
    - prototype_id :integer
-   - created_at :text
-   - uploaded_at :text
 
 - user
-   - name :text
-   - email_address :text
-   - password :text
+   - name         :text
+   - e-mail       :text
+   - password     :text
+   - member       :text
+   - works        :text
+   - avatar       :text
    - prototype_id :integer
-   - comment_id :integer
 
-# Association
+- image
+   - url :text
+   - prototype_id :integer
+
+- like
+   - prototype_id :integer
+   - user_id      :integer
+
+## Association
 
 - prototype
-   - has_many :comments
+   - has_many   :comments
    - belongs_to :user
+   - has_many   :images
+   - has_many   :likes
 
 - comment
    - belongs_to :prototype
@@ -35,3 +46,20 @@
 - user
    - has_many :prototypes
    - has_many :comments
+   - has_many :images
+   - has_many :likes
+
+- image
+   - belongs_to :user
+   - belongs_to :prototype
+
+- like
+   - belongs_to :user
+   - belongs_to :prototype
+
+
+
+
+
+
+
