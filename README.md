@@ -21,10 +21,12 @@
    - member       :text
    - works        :text
    - avatar       :text
+   - profile      :text
 
 - image
-   - url :text
-   - prototype_id :integer
+   - url             :text
+   - prototype_id    :integer
+   - roll            :integer
 
 - like
    - prototype_id :integer
