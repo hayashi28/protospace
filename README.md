@@ -4,7 +4,7 @@
 ## Database
 
 - prototype
-   - title       :text
+   - title       :string
    - catchcopy   :text
    - concept     :text
    - user_id     :integer
@@ -15,12 +15,12 @@
    - prototype_id :integer
 
 - user
-   - name         :text
-   - e-mail       :text
-   - password     :text
-   - member       :text
-   - works        :text
-   - avatar       :text
+   - name         :string
+   - e-mail       :string
+   - password     :string
+   - member       :string
+   - works        :string
+   - avatar       :string
    - profile      :text
 
 - image
