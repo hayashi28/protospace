@@ -4,9 +4,9 @@
 ## Database
 
 - prototype
+   - title       :text
    - catchcopy   :text
    - concept     :text
-   - image       :text
    - user_id     :integer
 
 - comment
@@ -21,7 +21,6 @@
    - member       :text
    - works        :text
    - avatar       :text
-   - prototype_id :integer
 
 - image
    - url :text
