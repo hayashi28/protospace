@@ -1,4 +1,5 @@
 class PrototypesController < ApplicationController
+  # layout '_header'
 
 def index
 end
