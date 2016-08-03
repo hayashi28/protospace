@@ -23,8 +23,9 @@
                   = link_to 'Profile Edit', edit_user_registration_path
                 %li
                   = link_to 'Logout', destroy_user_session_path, method: :delete
+                %li
+                  %a{:href => "/users/#{current_user.id}"} マイページ
           %li
             .btn.btn-primary.navbar-btn
               %a{href: "/proto/new"}
               New Proto
-
