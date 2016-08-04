@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
-  devise_for :users
+
   root 'prototypes#index'
+
+  devise_for :users
+  resources :users, only: :show
 
   get  '/prototypes/index'  =>    'prototypes#index'
   get  '/prototypes/new'    =>    'prototypes#new'
