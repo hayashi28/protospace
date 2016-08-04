@@ -9,3 +9,4 @@ Rails.application.routes.draw do
   get  '/prototypes/new'    =>    'prototypes#new'
   get  '/prototypes/show'   =>    'prototypes#show'
 end
+
