@@ -24,7 +24,9 @@
                 %li
                   = link_to 'Logout', destroy_user_session_path, method: :delete
                 %li
-                  %a{:href => "/users/#{current_user.id}"} マイページ
+                  %a{:href => "/users/#{current_user.id}"} My page
+                %li
+                  = link_to 'Profile Edit', "/users/#{current_user.id}/edit", method: :get
           %li
             .btn.btn-primary.navbar-btn
               %a{href: "/proto/new"}
