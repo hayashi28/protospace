@@ -15,7 +15,7 @@
    - prototype_id :integer
 
 - user
-   - name         :string
+   - nickname         :string
    - e-mail       :string
    - password     :string
    - member       :string
@@ -24,9 +24,9 @@
    - profile      :text
 
 - image
-   - url             :text
+   - image             :string
    - prototype_id    :integer
-   - roll            :integer
+   - role            :integer
 
 - like
    - prototype_id :integer

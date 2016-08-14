@@ -5,4 +5,6 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   validates :email, :nickname, :member, :profile, :works, presence: true
+  mount_uploader :avatar, AvatarUploader
+  has_many :prototypes
 end
