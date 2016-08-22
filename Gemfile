@@ -51,4 +51,4 @@ gem 'erb2haml'
 gem 'devise'
 gem 'carrierwave'
 gem 'rmagick'
-
+gem 'pry-rails'

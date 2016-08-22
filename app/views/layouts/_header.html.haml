@@ -27,5 +27,4 @@
                   %a{:href => "/users/#{current_user.id}"} My page
           %li
             .btn.btn-primary.navbar-btn
-              %a{href: "/proto/new"}
-              New Proto
+              = link_to 'New Proto', new_prototype_path
