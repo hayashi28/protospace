@@ -1,0 +1,23 @@
+.col-sm-4.col-md-3.proto-content
+  .thumbnail
+    - if user_signed_in? && current_user.id == prototype.user_id
+      .dropdown.drop_menu_location
+        %button.btn.btn-default{ id: "dropdownMenu", type: "button", data: { toggle: "dropdown" } } action
+        %ul.dropdown-menu{ area: { labelledby: "dropdownMenu1" } }
+          %li
+            = link_to "Delete", prototypes_path(prototype), method: :delete, data: { confirm: "Are you sure you want to permanently delete ?" }
+          %li
+            = link_to "Edit",  edit_prototype_path(prototype)
+    = link_to image_tag(prototype.prototype_images.main.first.image), prototypes_path(prototype)
+    .caption
+      %h3= prototype.title
+      .proto-meta
+        .proto-user
+          = link_to "by #{prototype.user.nickname}", user_path(prototype.user)
+        .proto-posted
+          = prototype.created_at.strftime('%m/%d')
+      %ul.proto-tag-list.list-inline
+        %li
+          = link_to "iPad",'#',class: "btn btn-default"
+        %li
+          = link_to "wireframe",'#',class: "btn btn-default"

@@ -1,6 +1,7 @@
 class PrototypesController < ApplicationController
 
   def index
+    @prototypes = Prototype.order(created_at: :DESC)
   end
 
   def show
@@ -28,3 +29,4 @@ class PrototypesController < ApplicationController
   end
 
 end
+
