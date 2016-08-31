@@ -10,7 +10,8 @@
             = link_to "Edit",  edit_prototype_path(prototype)
     = link_to image_tag(prototype.prototype_images.main.first.image), prototype_path(prototype)
     .caption
-      %h3= prototype.title
+      %h3
+      = prototype.title
       .proto-meta
         .proto-user
           = link_to "by #{prototype.user.nickname}", user_path(prototype.user)
