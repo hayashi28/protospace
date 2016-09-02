@@ -31,6 +31,13 @@ class PrototypesController < ApplicationController
     end
   end
 
+  def destroy
+    if @prototype.user_id == current_user.id
+      @prototype.destroy
+      redirect_to root_path, notice: 'Deleted successfully'
+    end
+  end
+
   private
 
   def prototype_params
