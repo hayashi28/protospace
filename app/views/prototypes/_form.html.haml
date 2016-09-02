@@ -1,0 +1,40 @@
+= form_for @prototype, html: {class: 'container proto-new'} do |f|
+  = render "layouts/error", danger: @prototype
+  = f.hidden_field :user_id, value: current_user.id
+  .col-md-8.col-md-offset-2
+    %header.row.user-nav.row
+      .col-md-12
+        = f.text_field :title, placeholder: "Title", class: "proto-new-title", required: true
+    .row
+      .col-md-12
+        .cover-image-upload
+          = f.fields_for :prototype_images do |main_image|
+            = main_image.file_field :image
+            = main_image.hidden_field :role, value: :main
+      .col-md-12
+        %ul.proto-sub-list.list-group
+          - 2.times do
+            = f.fields_for :prototype_images do |sub_image|
+              %li.list-group-item.col-md-4.appear_form
+                .image-upload.js-preview
+                  = sub_image.file_field :image
+                  = sub_image.hidden_field :role, value: :sub
+      %li.list-group-item.col-md-4
+        .image-upload-plus
+          %span +
+    .row.proto-description
+      .col-md-12
+        = f.text_field :catchcopy, placeholder: "Catch Copy", required: true
+      .col-md-12
+        = f.text_area :concept, cols: "30", rows: "4", placeholder: "Concept", required: true
+      .col-md-12
+        %h4 Tag List
+        .row
+          .col-md-3
+            %input{type: "text", placeholder: "Web Design"}/
+          .col-md-3
+            %input{type: "text", placeholder: "UI"}/
+          .col-md-3
+            %input{type: "text", placeholder: "Application"}/
+    .row.text-center.proto-btn
+      = f.submit "Publish", class: "button btn btn-lg btn-primary btn-block"
