@@ -11,3 +11,4 @@ class LikesController < ApplicationController
     @prototype = Prototype.find(params[:id])
   end
 end
+
