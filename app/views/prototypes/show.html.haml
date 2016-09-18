@@ -35,4 +35,15 @@
           = link_to "iPad", '#', class: "btn btn-default"
         %li
           = link_to "wireframe", '#', class: "btn btn-default"
-
+    .col-md-8
+      #js-comments
+        = render partial: "comments/comment", collection: @comments
+      - if user_signed_in?
+        = form_for [@prototype, @comment], remote: true do |f|
+          = f.hidden_field :user_id, value: current_user.id
+          %h4 Write a comment
+          .row
+            .form-group.col-md-10
+              = f.text_area :content, require: true, rows: "3", placeholder: "Your comments", id: "comment_text", class: "form-control"
+            .form-group.col-md-2
+              = f.submit "COMMENT", class: "button btn btn-primary"
