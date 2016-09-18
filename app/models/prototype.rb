@@ -4,6 +4,7 @@ class Prototype < ActiveRecord::Base
   has_one :main_image, -> { where(role: 0) }, class_name: "PrototypeImage"
   has_many :prototype_images, dependent: :delete_all
   has_many :likes, dependent: :destroy
+  has_many :comments
   accepts_nested_attributes_for :prototype_images, reject_if: :reject_sub_images, limit: 4
 
   def like_user(user)

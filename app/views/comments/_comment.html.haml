@@ -1,0 +1,9 @@
+.media
+  .media-left
+    = link_to image_tag(comment.user.avatar, class: "media-object", style: "width: 64px; height: 64px;"), user_path(@prototype.user)
+  .media-body
+    %h4#top-aligned-media.meadia-heading
+      = comment.user.nickname
+      = link_to "#top-aligned-media", class: 'anchorjs-link' do
+        %span.anchorjs-icon
+      %p= comment.content
