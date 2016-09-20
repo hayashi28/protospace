@@ -4,13 +4,16 @@ Rails.application.routes.draw do
 
   devise_for :users
 
-  resources :prototypes do
-    resources :likes, only: [:create, :destroy]
-    resources :comments, only: [:create]
+  resources :users, only: [:show, :edit, :update]
+
+  namespace :prototypes do
+    resources :popular, only: :index
   end
 
-  resources :users, only: [:show, :edit, :update]
-  resources :popular, only: [:index]
+  resources :prototypes do
+    resources :likes, only: [:create, :destroy]
+    resources :comments, only: :create
+  end
 
 end
 

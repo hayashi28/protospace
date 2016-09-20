@@ -1,4 +1,4 @@
-class PopularController < ApplicationController
+class Prototypes::PopularController < PrototypesController
 
   def index
     @prototypes = Prototype.includes(:user).order(likes_count: :DESC)
