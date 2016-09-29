@@ -1,0 +1,8 @@
+.container
+  .row
+    .tag-list
+      %h2 Tags list
+    - @tags.each do |tag|
+      %ul
+        .col-md-4
+          =link_to tag.name, tag_path(tag), class: "btn btn-default btn-tag"

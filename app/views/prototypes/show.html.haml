@@ -31,10 +31,9 @@
     .col-md-3
       %h4 Tag List
       %ul.proto-tag-list.list-inline
+      - @prototype.tags.each do |tag|
         %li
-          = link_to "iPad", '#', class: "btn btn-default"
-        %li
-          = link_to "wireframe", '#', class: "btn btn-default"
+          = link_to tag.name, tag_path(tag), class: "btn btn-default"
     .col-md-8
       #js-comments
         = render partial: "comments/comment", collection: @comments
