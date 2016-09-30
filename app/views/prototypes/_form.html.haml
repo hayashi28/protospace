@@ -30,12 +30,9 @@
       .col-md-12
         %h4 Tag List
         .row
-          .col-md-3
-            %input{type: "text", placeholder: "Web Design"}/
-          .col-md-3
-            %input{type: "text", placeholder: "UI"}/
-          .col-md-3
-            %input{type: "text", placeholder: "Application"}/
+          - 3.times do |num|
+            .col-md-12
+              = text_field_tag "prototype[tag_list][]", "#{@prototype.tag_list[num]}", placeholder: "Tag #{num+1}"
     .row.text-center.proto-btn
       = f.submit "Publish", class: "button btn btn-lg btn-primary btn-block"
 

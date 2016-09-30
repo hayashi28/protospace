@@ -7,6 +7,8 @@ class Prototype < ActiveRecord::Base
   has_many :comments
   accepts_nested_attributes_for :prototype_images, reject_if: :reject_sub_images, limit: 4
 
+  acts_as_taggable
+
   def like_user(user)
    likes.find_by(user_id: user.id)
   end
