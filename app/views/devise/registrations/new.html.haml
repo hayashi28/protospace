@@ -9,7 +9,7 @@
         .user-name.col-md-10
           = f.text_field :nickname, placeholder: "Username", autofocus: true
         .user-image.col-md-2
-          %button.btn.btn-primary Add image
+          = f.button "Add Image", class: "btn btn-primary js-preview"
           = f.file_field :avatar
       .user-email
         = f.text_field :email, placeholder: "E-Mail"
