@@ -1,5 +1,3 @@
-# encoding: utf-8
-
 class ImageUploader < CarrierWave::Uploader::Base
 
   include CarrierWave::RMagick
@@ -11,8 +9,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   end
 
   def default_url
-    # "/images/fallback/" + [version_name, "default.png"].compact.join('_')
-    'noimage-big.png'
+    '/assets/noimage-big.png'
   end
 
   def extension_white_list

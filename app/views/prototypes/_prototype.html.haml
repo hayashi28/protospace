@@ -8,7 +8,7 @@
             = link_to "Delete", prototype_path(prototype), method: :delete, data: { confirm: "Are you sure you want to permanently delete ?" }
           %li
             = link_to "Edit",  edit_prototype_path(prototype)
-    = link_to image_tag(prototype.prototype_images.main.first.image), prototype_path(prototype)
+    = link_to image_tag(prototype.main_image.image), prototype_path(prototype.id)
     .caption
       %h3
       = prototype.title

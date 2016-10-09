@@ -1,0 +1,9 @@
+%ul.proto-sub-list.list-group
+  = f.fields_for :prototype_images, (@prototype.prototype_images.sub) do |sub_image|
+    %li.list-group-item.col-md-12.appear_form
+      .image-upload.js-preview
+        = sub_image.file_field :image
+        = sub_image.hidden_field :type, value: :sub
+%li.list-group-item.col-md-12
+  .image-upload-plus
+    %span +

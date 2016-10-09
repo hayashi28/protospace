@@ -1,7 +1,7 @@
 class Prototype < ActiveRecord::Base
   validates :title, :catchcopy, :concept, presence: true
   belongs_to :user
-  has_one :main_image, -> { where(role: 0) }, class_name: "PrototypeImage"
+  has_one :main_image, -> { where(role: PrototypeImage.roles[:main]) }, class_name: "PrototypeImage"
   has_many :prototype_images, dependent: :delete_all
   has_many :likes, dependent: :destroy
   has_many :comments
