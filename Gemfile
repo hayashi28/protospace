@@ -26,3 +26,5 @@ gem 'devise'
 gem 'carrierwave'
 gem 'rmagick'
 gem 'acts-as-taggable-on', '~> 3.4'
+gem 'kaminari'
+

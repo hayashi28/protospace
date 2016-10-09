@@ -8,6 +8,7 @@ class Prototype < ActiveRecord::Base
   accepts_nested_attributes_for :prototype_images, reject_if: :reject_sub_images
 
   acts_as_taggable
+  paginates_per 5
 
   def like_user(user)
    likes.find_by(user_id: user.id)
