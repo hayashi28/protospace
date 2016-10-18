@@ -13,8 +13,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 group :development, :test do
   gem 'pry-rails'
   gem 'rspec-rails'
-  gem 'factory_girl_rails'
+  gem 'factory_girl_rails', '~> 4.4.1'
   gem 'faker'
+  gem 'forgery'
 end
 
 group :test do

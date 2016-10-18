@@ -4,8 +4,8 @@ class Prototype < ActiveRecord::Base
   has_one :main_image, -> { where(role: PrototypeImage.roles[:main]) }, class_name: "PrototypeImage"
   has_many :prototype_images, dependent: :delete_all
   has_many :likes, dependent: :destroy
-  has_many :comments
-  accepts_nested_attributes_for :prototype_images, reject_if: :reject_sub_images
+  has_many :comments, dependent: :delete_all
+  accepts_nested_attributes_for :prototype_images, reject_if: :reject_sub_images, allow_destroy: true
 
   acts_as_taggable
   paginates_per 5
