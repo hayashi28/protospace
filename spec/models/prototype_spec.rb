@@ -45,7 +45,6 @@ describe Prototype do
       end
     end
   end
-end
 
   describe '#liked_by?(user)' do
     describe 'when liked by a user' do
@@ -63,6 +62,5 @@ end
         expect(Like.find_by(user_id: user.id)).to be_falsey
       end
     end
-
-
   end
+end
