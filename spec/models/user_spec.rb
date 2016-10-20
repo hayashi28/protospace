@@ -3,7 +3,7 @@ require 'rails_helper'
 describe User do
   describe '#create' do
     it "is invalid without a nickname, member, profile, works, password, password_confirmation" do
-      user = FactoryGirl.build(:user, email: "ccc@ccc.com")
+      user = build(:user, email: "ccc@ccc.com")
       expect(user).to be_valid
     end
 
@@ -14,19 +14,19 @@ describe User do
     end
 
     it "is invalid without a password" do
-      user = FactoryGirl.build(:user, password: nil)
+      user = build(:user, password: nil)
       user.valid?
       expect(user.errors[:password]).to include("can't be blank")
     end
 
     it "is invalid without a password_confirmation although with a password" do
-      user = FactoryGirl.build(:user, password_confirmation: "")
+      user = build(:user, password_confirmation: "")
       user.valid?
       expect(user.errors[:password_confirmation]).to include("doesn't match Password")
     end
 
     it "is invalid without a email" do
-      user = FactoryGirl.build(:user, email: "")
+      user = build(:user, email: "")
       user.valid?
       expect(user.errors[:email]).to include("can't be blank")
     end
