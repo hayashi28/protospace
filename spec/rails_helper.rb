@@ -4,6 +4,9 @@ require File.expand_path('../../config/environment', __FILE__)
 abort("The Rails environment is running in production mode!") if Rails.env.production?
 require 'spec_helper'
 require 'rspec/rails'
+require 'capybara/poltergeist'
+Capybara.javascript_driver = :poltergeist
+Capybara.default_max_wait_time = 5
 
 ActiveRecord::Migration.maintain_test_schema!
 
@@ -17,6 +20,3 @@ RSpec.configure do |config|
   config.filter_rails_from_backtrace!
 
 end
-
-require 'capybara/poltergeist'
-Capybara.javascript_driver = :poltergeist
