@@ -46,8 +46,8 @@ describe PrototypesController do
     end
 
     describe 'GET #show' do
+      let(:prototype) { create(:prototype) }
       it 'assigns the requested prototype to @prototype' do
-        prototype = create(:prototype)
         get :show, id: prototype
         expect(assigns(:prototype)).to eq prototype
       end
@@ -61,26 +61,23 @@ describe PrototypesController do
 
     describe 'PATCH #update' do
       describe 'with valid attributes' do
+        let(:prototype) { create(:prototype) }
         it 'assigns the requested prototype to @prototype' do
-          prototype = create(:prototype)
           patch :update, id: prototype, prototype: attributes_for(:prototype)
           expect(assigns(:prototype)).to eq prototype
         end
 
         it 'updates attributes of prototype' do
-          prototype = create(:prototype)
           patch :update, id: prototype, prototype: attributes_for(:prototype, titile: "updated")
           expect(assigns(:prototype)).to eq prototype
         end
 
         it 'redirects to ;prototype_path' do
-          prototype = create(:prototype)
           patch :update, id: prototype, prototype: attributes_for(:prototype, titile: "updated")
           expect(response).to redirect_to root_path
         end
 
         it 'shows flash message to show update prototype successfully' do
-          prototype = create(:prototype)
           patch :update, id: prototype, prototype: attributes_for(:prototype, titile: "updated")
           expect(flash[:notice]).to eq('Updated successfully')
         end
@@ -88,8 +85,8 @@ describe PrototypesController do
     end
 
     describe 'DELETE #destroy' do
+      let(:prototype) { create(:prototype) }
       it 'deletes the prototype' do
-        prototype = create(:prototype)
         expect{
           delete :index, id: prototype
         }.to change(Prototype, :count).by(0)
@@ -106,6 +103,7 @@ describe PrototypesController do
     end
 
     describe 'POST #create' do
+      let(:prototype) { create(:prototype) }
       it 'redirects sign_in page' do
         post :create
         expect(response).to redirect_to new_user_session_path
@@ -113,22 +111,23 @@ describe PrototypesController do
     end
 
     describe 'GET #edit' do
+      let(:prototype) { create(:prototype) }
       it 'redirects sign_in page' do
-        prototype = create(:prototype)
         get :edit, id: prototype
         expect(response).to redirect_to new_user_session_path
       end
     end
 
     describe 'PATCH #update' do
+      let(:prototype) { create(:prototype) }
       it 'redirects sign_in page' do
-        prototype = create(:prototype)
         patch :update, id: prototype
         expect(response).to redirect_to new_user_session_path
       end
     end
 
     describe 'DELETE #destroy' do
+      let(:prototype) { create(:prototype) }
       it 'redirects sign_in page' do
         prototype = create(:prototype)
         delete :destroy, id: prototype
