@@ -3,7 +3,7 @@ require 'rails_helper'
 describe User do
   describe '#create' do
     it "is invalid without a nickname, member, profile, works, password, password_confirmation" do
-      user = build(:user, email: "ccc@ccc.com")
+      user = build(:user)
       expect(user).to be_valid
     end
 
