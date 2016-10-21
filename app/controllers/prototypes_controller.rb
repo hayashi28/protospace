@@ -1,4 +1,5 @@
 class PrototypesController < ApplicationController
+  before_action :authenticate_user!
   before_action :define_prototype, except: [:index, :new, :create]
 
   def index
